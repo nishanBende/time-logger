@@ -1,6 +1,6 @@
 {
   "name": "time-logger",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Make time logging less boring.",
   "main": "index.js",
   "scripts": {
