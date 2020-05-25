@@ -1,0 +1,34 @@
+{
+  "name": "time-logger",
+  "version": "1.0",
+  "description": "Make time logging less boring.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./cli.js",
+    "cred": "node ./cli.js --cred"
+  },
+  "author": "Nishan B <nishanbende@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "configstore": "^5.0.1",
+    "moment": "^2.26.0",
+    "opn": "^5.4.0",
+    "ora": "^3.0.0",
+    "prompts": "^2.3.2",
+    "yargs": "^15.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nishanBende/time-logger"
+  },
+  "keywords": [
+    "time",
+    "log",
+    "time-logger"
+  ],
+  "bin": {
+    "log-time": "./cli.js"
+  }
+}
