@@ -9,13 +9,13 @@ npm install -g https://github.com/nishanBende/time-logger
 ### Start Logging
 
 ```
-log-time
+log-task
 ```
 
 #### Optional flags
 
 ```
-log-time -p [projectname]
+log-task -p [projectname]
 ```
 
 `Note: Timesheet files are saved in HOME_DIR/time-logs/[Month]-[Year].json`
