@@ -1,13 +1,15 @@
 const fs = require("fs");
 const path = require("path");
-const os = require("os");
 const moment = require("moment");
 const { FIELD_NAMES } = require("./constants");
-const { INPUT_DATE_FORMAT, INPUT_DATE_TIME_FORMAT } = require("./constants");
-const timeSheetPath = path.resolve(os.homedir(), "time-logs");
+const {
+  INPUT_DATE_FORMAT,
+  INPUT_DATE_TIME_FORMAT,
+  TIMESHEET_FOLDER_PATH,
+} = require("./constants");
 
-if (!fs.existsSync(timeSheetPath)) {
-  fs.mkdirSync(timeSheetPath);
+if (!fs.existsSync(TIMESHEET_FOLDER_PATH)) {
+  fs.mkdirSync(TIMESHEET_FOLDER_PATH);
 }
 
 const storeLog = (log) => {
@@ -23,7 +25,7 @@ const storeLog = (log) => {
 
   const fileName = getSheetName(validDate);
 
-  const filePath = path.resolve(timeSheetPath, fileName + ".json");
+  const filePath = path.resolve(TIMESHEET_FOLDER_PATH, fileName + ".json");
   createOrAppendInSheet(filePath, log);
 };
 

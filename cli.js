@@ -3,7 +3,11 @@ const chalk = require("chalk");
 const argv = require("yargs").argv;
 const storeLog = require("./utils/storeTimeSheet");
 const getWorkLogPromptFields = require("./utils/getFormFields");
-const { FIELD_NAMES, INPUT_DATE_TIME_FORMAT } = require("./utils/constants");
+const {
+  FIELD_NAMES,
+  INPUT_DATE_TIME_FORMAT,
+  TIMESHEET_FOLDER_PATH,
+} = require("./utils/constants");
 const moment = require("moment");
 
 const getProjectName = () => {
@@ -33,6 +37,7 @@ const main = async () => {
     console.log(
       chalk.green("Log Saved. Record: ", JSON.stringify(promptResonse, null, 2))
     );
+    console.log("File Path: ", TIMESHEET_FOLDER_PATH);
   } catch (e) {
     console.log(e);
   }
