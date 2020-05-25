@@ -25,3 +25,4 @@ log-task -p [projectname]
 - [x] Split log files automatically by Month-Year format.
 - [ ] Export Logs in word/csv
 - [ ] Support Keka clock-in/clock-out with a single toggle command
+- [ ] Integrate JIRA support from https://github.com/solutelabs/jira-time-logger
