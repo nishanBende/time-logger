@@ -2,6 +2,8 @@
 
 ### Installation
 
+- Requires NodeJS
+
 ```
 npm install -g https://github.com/nishanBende/time-logger
 ```
@@ -23,6 +25,7 @@ log-task -p [projectname]
 #### Feature Checklist
 
 - [x] Split log files automatically by Month-Year format.
+- [ ] Make it easier to install for non-developers (needs discussion).
 - [ ] Export Logs in word/csv
 - [ ] Support Keka clock-in/clock-out with a single toggle command
 - [ ] Integrate JIRA support from https://github.com/solutelabs/jira-time-logger
