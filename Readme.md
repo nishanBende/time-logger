@@ -23,5 +23,5 @@ log-time -p [projectname]
 #### Feature Checklist
 
 - [x] Split log files automatically by Month-Year format.
-- [] Export Logs in word/csv
-- [] Support Keka clock-in/clock-out with a single toggle command
+- [ ] Export Logs in word/csv
+- [ ] Support Keka clock-in/clock-out with a single toggle command

@@ -12,10 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.0.0",
-    "configstore": "^5.0.1",
     "moment": "^2.26.0",
-    "opn": "^5.4.0",
-    "ora": "^3.0.0",
     "prompts": "^2.3.2",
     "yargs": "^15.3.1"
   },
@@ -29,6 +26,6 @@
     "time-logger"
   ],
   "bin": {
-    "log-time": "./cli.js"
+    "log-task": "./cli.js"
   }
 }
