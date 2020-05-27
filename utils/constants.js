@@ -1,7 +1,7 @@
-const INPUT_DATE_FORMAT = "DD/MM/YY";
 const path = require("path");
-const INPUT_DATE_TIME_FORMAT = "DD/MM/YY HH:MM";
 const os = require("os");
+const INPUT_DATE_FORMAT = "DD/MM/YYYY";
+const INPUT_DATE_TIME_FORMAT = "DD/MM/YYYY HH:mm";
 
 const TIMESHEET_FOLDER_PATH = path.resolve(os.homedir(), "time-logs");
 

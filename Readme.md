@@ -14,10 +14,22 @@ npm install -g https://github.com/nishanBende/time-logger
 log-task
 ```
 
-#### Optional flags
+### Optional flags
 
 ```
 log-task -p [projectname]
+```
+
+```
+log-task -o [sheetName e.g. May-2020.json]
+
+// If sheet name is not passed opens current [Month]-[Year].json
+
+```
+
+```
+// For more info
+log-task --help
 ```
 
 `Note: Timesheet files are saved in HOME_DIR/time-logs/[Month]-[Year].json`

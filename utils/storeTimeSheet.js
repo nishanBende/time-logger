@@ -16,16 +16,14 @@ const storeLog = (log) => {
   let date = log[FIELD_NAMES.date];
   const format1 = moment(date, INPUT_DATE_FORMAT);
   const format2 = moment(date, INPUT_DATE_TIME_FORMAT);
-  let validDate;
-  if (format1.isValid()) {
-    validDate = format1;
-  } else if (format2.isValid()) {
-    validDate = format2;
+  if (format2.isValid()) {
+    log[FIELD_NAMES.date] = format2;
+  } else if (format1.isValid()) {
+    log[FIELD_NAMES.date] = format1;
   }
+  const fileName = getSheetName(log[FIELD_NAMES.date]);
 
-  const fileName = getSheetName(validDate);
-
-  const filePath = path.resolve(TIMESHEET_FOLDER_PATH, fileName + ".json");
+  const filePath = path.resolve(TIMESHEET_FOLDER_PATH, fileName);
   createOrAppendInSheet(filePath, log);
 };
 
@@ -35,7 +33,7 @@ const createOrAppendInSheet = (filePath, log) => {
       const jsonRes = fs.readFileSync(filePath);
       const data = JSON.parse(jsonRes);
       data.push(log);
-      fs.writeFileSync(filePath, JSON.stringify(data));
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
     } catch (e) {
       console.log(
         "Timesheet File corrupted ",
@@ -45,12 +43,12 @@ const createOrAppendInSheet = (filePath, log) => {
       throw e;
     }
   } else {
-    fs.writeFileSync(filePath, JSON.stringify([log]));
+    fs.writeFileSync(filePath, JSON.stringify([log], null, 2));
   }
 };
 
 const getSheetName = (date) => {
-  return date.format("MMMM-YYYY");
+  return date.format("MMMM-YYYY") + ".json";
 };
 
-module.exports = storeLog;
+module.exports = { storeLog, getSheetName };
